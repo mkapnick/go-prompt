@@ -77,15 +77,25 @@ func Choose(prompt string, list []string) int {
 // Password prompt.
 func Password(prompt string, args ...interface{}) string {
 	fmt.Printf(prompt+": ", args...)
-	s := string(gopass.GetPasswd()[0:])
-	return s
+
+	b, err := gopass.GetPasswd()
+	if err != nil {
+		panic(err)
+	}
+
+	return string(b)
 }
 
 // PasswordMasked prompt with mask.
 func PasswordMasked(prompt string, args ...interface{}) string {
 	fmt.Printf(prompt+": ", args...)
-	s := string(gopass.GetPasswdMasked()[0:])
-	return s
+
+	b, err := gopass.GetPasswdMasked()
+	if err != nil {
+		panic(err)
+	}
+
+	return string(b)
 }
 
 // index of `s` in `list`.
