@@ -11,7 +11,7 @@ import (
 // String prompt.
 func String(prompt string, args ...interface{}) string {
 	var s string
-	fmt.Printf(prompt+": ", args...)
+	fmt.Printf(prompt, args...)
 	fmt.Scanln(&s)
 	return s
 }
@@ -76,7 +76,7 @@ func Choose(prompt string, list []string) int {
 
 // Password prompt.
 func Password(prompt string, args ...interface{}) string {
-	fmt.Printf(prompt+": ", args...)
+	fmt.Printf(prompt, args...)
 
 	b, err := gopass.GetPasswd()
 	if err != nil {
@@ -88,7 +88,7 @@ func Password(prompt string, args ...interface{}) string {
 
 // PasswordMasked prompt with mask.
 func PasswordMasked(prompt string, args ...interface{}) string {
-	fmt.Printf(prompt+": ", args...)
+	fmt.Printf(prompt, args...)
 
 	b, err := gopass.GetPasswdMasked()
 	if err != nil {

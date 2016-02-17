@@ -1,6 +1,6 @@
 package main
 
-import ".."
+import "github.com/tj/go-prompt"
 
 var langs = []string{
 	"c",
@@ -13,6 +13,6 @@ var langs = []string{
 }
 
 func main() {
-	i := prompt.Choose("What's your favorite language?", langs)
+	i := prompt.Choose("What's your favorite language? ", langs)
 	println("picked: " + langs[i])
 }
