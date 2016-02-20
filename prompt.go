@@ -1,7 +1,9 @@
 package prompt
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 
@@ -10,10 +12,9 @@ import (
 
 // String prompt.
 func String(prompt string, args ...interface{}) string {
-	var s string
 	fmt.Printf(prompt, args...)
-	fmt.Scanln(&s)
-	return s
+	s, _ := bufio.NewReader(os.Stdin).ReadString('\n')
+	return strings.TrimRight(s, "\n")
 }
 
 // StringRequired prompt (required).

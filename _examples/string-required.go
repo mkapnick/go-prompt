@@ -7,8 +7,7 @@ import (
 )
 
 func main() {
-	println("need your name!")
 	first := prompt.StringRequired("First name: ")
 	last := prompt.StringRequired("Last name: ")
-	fmt.Printf("\nHello %s %s\n", first, last)
+	fmt.Printf("\nHello %q %q\n", first, last)
 }
