@@ -14,7 +14,7 @@ import (
 func String(prompt string, args ...interface{}) string {
 	fmt.Printf(prompt, args...)
 	s, _ := bufio.NewReader(os.Stdin).ReadString('\n')
-	return strings.TrimRight(s, "\n")
+	return strings.TrimRight(s, "\r\n")
 }
 
 // StringRequired prompt (required).
